@@ -1,9 +1,9 @@
 - name: Copy add user to group script
   template:
     src: templates/add_user_to_group.py
-    dest: '{{ script_temp_location }}/add_user_to_group.py
-    owner: '{{ oracle_user }}'
-    group: '{{ oracle_group }}'
+    dest: "{{ script_temp_location }}/add_user_to_group.py"
+    owner: "{{ oracle_user }}"
+    group: "{{ oracle_group }}"
 
 - name: Call add user to group script
-  shell: '{{ wlst_script }} {{ script_temp_location }}/add_user_to_group.py'
+  shell: "{{ wlst_script }} {{ script_temp_location }}/add_user_to_group.py"
