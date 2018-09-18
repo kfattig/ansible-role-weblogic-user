@@ -1,0 +1,7 @@
+- name: Create weblogic user
+  include: create_user.yml
+  when: create_user
+
+- name: Update group memberships
+  include: update_memberships.yml
+  when: update_memberships

@@ -1,0 +1,3 @@
+username: testuser
+description: created by ansible
+t3_url: t3://localhost:7001
