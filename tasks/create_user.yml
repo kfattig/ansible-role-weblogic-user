@@ -2,8 +2,8 @@
   template:
     src: templates/create_user.py
     dest: '{{ script_temp_location }}/create_user.py
-    owner: '{{ oracle_user }}'
-    group: '{{ oracle_group }}'
+    owner: "{{ oracle_user }}"
+    group: "{{ oracle_group }}"
 
 - name: Call create user script
   shell: '{{ wlst_script }} {{ script_temp_location }}/create_user.py'
