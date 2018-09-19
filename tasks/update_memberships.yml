@@ -7,3 +7,10 @@
 
 - name: Call add user to group script
   shell: "{{ wlst_script }} {{ script_temp_location }}/add_user_to_group.py"
+
+- name: Cleanup add_user_to_group
+  file:
+    state: absent
+    path: "{{ script_temp_location }}/add_user_to_group.py"
+  tags:
+    - always

@@ -7,3 +7,10 @@
 
 - name: Call create user script
   shell: "{{ wlst_script }} {{ script_temp_location }}/create_user.py"
+
+- name: Cleanup create_user
+  file:
+    state: absent
+    path: "{{ script_temp_location }}/create_user.py"
+  tags:
+    - always
