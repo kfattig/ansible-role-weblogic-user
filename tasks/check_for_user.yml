@@ -13,4 +13,9 @@
 - set_fact: 
     user_exists: "{{check_for_user_reg.rc ==1}}"
 
-
+- name: Cleanup
+  file:
+    state: absent
+    path: "{{ script_temp_location }}/check_for_user.py"
+  tags:
+    - always
