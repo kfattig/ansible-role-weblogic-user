@@ -1,6 +1,11 @@
+- name: Check for user existance
+  include: check_for_user.yml
+
 - name: Create weblogic user
   include: create_user.yml
-  when: create_user
+  when: 
+    - create_user 
+    - user_exists
 
 - name: Update group memberships
   include: update_memberships.yml
