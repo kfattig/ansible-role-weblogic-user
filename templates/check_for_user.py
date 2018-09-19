@@ -5,6 +5,6 @@ edit()
 serverConfig()
 
 cd('/SecurityConfiguration/{{ domain_name }}/Realms/myrealm/AuthenticationProviders/DefaultAuthenticator')
-sys.exit(cmo.userExists({{ username }}))
+sys.exit(cmo.userExists('{{ username }}'))
 disconnect()
 exit()
