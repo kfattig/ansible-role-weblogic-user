@@ -10,4 +10,4 @@
   register: check_for_user_reg
   ignore_errors: True
 
-- debug: var="check_for_user_reg |int"
+- debug: var="check_for_user_reg |boolean"
