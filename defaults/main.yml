@@ -6,3 +6,5 @@ wlst_script: '/app/ENP/fmw1036/oracle_common/common/bin/wlst.sh'
 oracle_user: mwadmin
 oracle_group: mwadmin
 weblogic_admin: tower
+create_user: false
+update_memerships: false
