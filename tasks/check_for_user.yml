@@ -13,6 +13,6 @@
 #- debug: var="check_for_user_reg |bool"
 
 - set_fact: 
-    user_exists: "{{check_for_user_reg.rc==1}}"
+    user_exists: "{{check_for_user_reg.rc|length ==1}}"
 
 - debug: var="user_exists"
