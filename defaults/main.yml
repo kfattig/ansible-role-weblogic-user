@@ -2,3 +2,5 @@ username: testuser
 description: created by ansible
 t3_url: 't3://localhost:7001'
 script_temp_location: '/tmp/'
+oracle_user: mwadmin
+oracle_group: mwadmin
