@@ -2,6 +2,7 @@ username: testuser
 description: created by ansible
 t3_url: 't3://localhost:7001'
 script_temp_location: '/tmp/'
+wlst_script: '/app/ENP/fmw1036/oracle_common/common/bin/wlst.sh'
 oracle_user: mwadmin
 oracle_group: mwadmin
 weblogic_admin: tower
