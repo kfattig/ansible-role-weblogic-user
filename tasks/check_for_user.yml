@@ -9,5 +9,5 @@
   shell: "{{ wlst_script }} {{ script_temp_location }}/check_for_user.py"
   register: check_for_user_reg
 
-- debug 
+- debug:
   var: check_for_user_reg
