@@ -1,0 +1,21 @@
+- name: Copy check for membership script
+  template:
+    src: templates/check_for_membership.py
+    dest: "{{ script_temp_location }}/check_for_membership.py"
+    owner: "{{ oracle_user }}"
+    group: "{{ oracle_group }}"
+
+- name: Call check for membership script
+  shell: "{{ wlst_script }} {{ script_temp_location }}/check_for_membership.py"
+  register: check_for_membership_reg
+  ignore_errors: True
+
+- set_fact: 
+    user_is_member: "{{check_for_membership_reg.rc ==1}}"
+
+- name: Cleanup check_formembership
+  file:
+    state: absent
+    path: "{{ script_temp_location }}/check_for_membership.py"
+  tags:
+    - always
