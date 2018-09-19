@@ -7,6 +7,12 @@
     - create_user 
     - not user_exists
 
+- name: Check for group membership
+  include: check_for_membership.yml
+  when: update_memberships
+
 - name: Update group memberships
   include: update_memberships.yml
-  when: update_memberships
+  when: 
+    - udpate_memberships
+    - not is_member
