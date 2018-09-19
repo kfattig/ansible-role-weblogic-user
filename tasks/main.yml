@@ -5,7 +5,7 @@
   include: create_user.yml
   when: 
     - create_user 
-#    - user_exists
+    - not user_exists
 
 - name: Update group memberships
   include: update_memberships.yml
