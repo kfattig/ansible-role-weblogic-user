@@ -7,4 +7,4 @@ oracle_user: mwadmin
 oracle_group: mwadmin
 weblogic_admin: tower
 create_user: false
-update_memerships: false
+update_memberships: false
