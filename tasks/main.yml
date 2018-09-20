@@ -15,4 +15,4 @@
   include: update_memberships.yml
   when: 
     - update_memberships
-    - not is_member
+    - not user_is_member
