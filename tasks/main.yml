@@ -14,5 +14,5 @@
 - name: Update group memberships
   include: update_memberships.yml
   when: 
-    - udpate_memberships
+    - update_memberships
     - not is_member
