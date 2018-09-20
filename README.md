@@ -10,34 +10,54 @@ This role requires WLST on the target host.  It's designed to be run on the Admi
 
 Role Variables
 --------------
+
+Below are the variables in use,  see the defaults file for defaults.
+
 Name|Description
 ---|---
-weblogic_username|Username to authenticate with Weblogic
+weblogic_admin|Username to authenticate with Weblogic (must be Admin user)
 weblogic_password|Password to authenticate with Weblogic
 username|Username to create
 password|Password to set for created user (Use vault!)
+t3_url|T3 URL to connect to Weblogic AdminServer
+script_temp_location|Location to stage WLST scripts
+oracle_user|User that owns weblogic installation (used for ownership of WLST scripts)
+oracle_group|Group that owns weblogic installation (used for ownership of WLST scripts)
+domain_name|Name of the weblogic domain
+wlst_script|Path to WLST script
+update_memberships|Boolean to enable/disable group membership update
+create_user|Boolean to enable/disable user creation
+description|Description to use for the user in weblogic.
 
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No Dependencies
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+This sample creates an Admin user called 'testuser'
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+    - name: create testuser
+    hosts: weblogic_admin_host
+    become: yes
+    become_user: mwadmin
+    roles:
+    - role: weblogic_user
+    vars:
+      create_user: True
+      update_memberships: True
+      username: testuser
+      password: password1234
+      group_name: Administrators
+      weblogic_admin: weblogic
+      weblogic_password: weblogic1234
+      domain_name: MyDomain
 
-License
--------
-
-BSD
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+kyle.fattig@zirous.com
